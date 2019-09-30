@@ -1,4 +1,4 @@
-FROM debian
+FROM debian:jessie
 LABEL MatejKucera <matej.kucera@atlas.cz>
 
 RUN apt-get update
