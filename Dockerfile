@@ -1,8 +1,8 @@
-FROM debian:jessie
+FROM debian:buster
 LABEL MatejKucera <matej.kucera@atlas.cz>
 
 RUN apt-get update
-RUN apt-get -y install cron mysql-client zip
+RUN apt-get -yqq install cron mariadb-client zip
 RUN apt-get clean
 
 RUN mkdir /var/backup
