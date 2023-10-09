@@ -33,11 +33,13 @@ docker compose up -d
 ## Configuration
 
 ### Limitations
-- Schedule, compression level and retention can't be set per database and is same for all database.
+- Schedule, compression level and retention can't be set uniquely per database and are same for all databases.
 - Backup processes are run in series, not in parallel. If the first process takes too long, the execution of the next process is delayed until the first one finishes.
 
 ### ``.env``
-In ``.env``, set paths to output directory and config file, compression level (fastest/lowest: 1, slowest/largest: 9), backup retention in days and schedule in cron syntax. 
+In ``.env``, set paths to output directory and config file, compression level, backup retention in days and schedule in cron syntax. 
+
+Compression level 1 is the fastest and lowest compression setting. Level 9 is the slowest and best compression.
 
 ```bash
 # Docker compose project name
