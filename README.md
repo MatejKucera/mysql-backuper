@@ -7,11 +7,28 @@ This docker app is used for regular MySQL backups.
 - docker (including compose plugin)
 
 ## Installation
-1. Clone the repository
+ 1. Clone the repository
+```bash
+git clone https://github.com/MatejKucera/mysql-backuper/
+cd mysql-backuper
+```
 2. Rename ``.env.example`` => ``.env``
+```bash
+mv .env.example .env
+```
 3. Rename ``config.json.example`` => ``config.json``
-4. Configure ``.env`` and ``config.json`` files
+```bash
+mv config.json.example config.json
+```
+4. Configure ``.env`` and ``config.json`` files, see Configuration below.
 5. Start the container using ``docker compose up``
+```bash
+docker compose up
+```
+to run in a background (detached terminal) add ``-d``
+```bash
+docker compose up -d
+```
 
 ## Configuration
 
