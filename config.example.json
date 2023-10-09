@@ -1,0 +1,16 @@
+[
+    {
+        "hostname": "146.102.42.42",
+        "port":     "3306",
+        "database": "network",
+        "username": "user",
+        "password": "secret"
+    },
+    {
+        "hostname": "146.102.42.42",
+        "port":     "3306",
+        "database": "netreg",
+        "username": "user",
+        "password": "secret"
+    }
+]

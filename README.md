@@ -16,9 +16,9 @@ cd mysql-backuper
 ```bash
 mv .env.example .env
 ```
-3. Rename ``config.json.example`` => ``config.json``
+3. Rename ``config.example.json`` => ``config.json``
 ```bash
-mv config.json.example config.json
+mv config.example.json config.json
 ```
 4. Configure ``.env`` and ``config.json`` files, see Configuration below.
 5. Start the container using ``docker compose up``
@@ -61,7 +61,9 @@ SCHEDULE="* * * * *"
 
 ### ``config.json``
 
-In ``config.json``, define connections to all databases that are supposed to be backed up:
+In ``config.json``, define connections to all databases that are supposed to be backed up.
+
+The amount of connections it not limited.
 ```json
 [
     {
