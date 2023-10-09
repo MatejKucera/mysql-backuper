@@ -1,12 +1,14 @@
-FROM debian:buster
-LABEL MatejKucera <matej.kucera@atlas.cz>
+FROM debian:12.1-slim
+LABEL name="MySQL Backuper"
+LABEL email="matej.kucera@vse.cz"
 
-RUN apt-get update
-RUN apt-get -yqq install cron mariadb-client zip
-RUN apt-get clean
+RUN apt update -yqq && \
+    apt install -y mariadb-client zip cron jq && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    touch /etc/cron.d/scheduler
 
-RUN mkdir /var/backup
+COPY src app
+COPY .env /app/.env
 
-COPY backup.sh /backup.sh
-COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT [ "/entrypoint.sh" ]
+WORKDIR /app
+ENTRYPOINT [ "/app/entrypoint.sh" ]

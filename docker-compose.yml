@@ -7,19 +7,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    environment: 
-      SCHEDULE: "\"* * * * *\""
-      HOSTNAME: db
-      DATABASE: mydb
-      USERNAME: root
-      PASSWORD: secret
-      PORT: 3306
+    env_file:
+      - .env
     volumes: 
-      - /tmp/backup:/var/backup
-  
-  db:
-    image: mariadb:10.4.4-bionic
-    restart: always
-    environment:
-      MYSQL_DATABASE: mydb
-      MYSQL_ROOT_PASSWORD: secret
+      - $PATH_CONFIG_FILE:/app/config.json
+      - $PATH_OUTPUT_DIR:/app/output

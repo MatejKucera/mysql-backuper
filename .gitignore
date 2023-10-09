@@ -1,0 +1,8 @@
+.idea/
+.vscode/
+.code/
+.DS_Store/
+output/
+log/
+.env
+config.json
